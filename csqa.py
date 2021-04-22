@@ -26,7 +26,7 @@ def search_engine(ds, query):
     return results
 
 option1=st.sidebar.selectbox('Train, val or test ?', ['dev', 'test', 'train'])
-option2=st.sidebar.selectbox('Search Mode ?', ['True'])
+option2=st.sidebar.selectbox('Search Mode ?', ['False', 'True'])
 dataset=load_data(option1)
 
 if option2 == 'True':
