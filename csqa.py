@@ -15,8 +15,24 @@ def load_data(type):
                 data.append(json.loads(i))
     return data
 
+
+def search_engine(ds, query):
+    results=[]
+    for i in ds:
+        print(i['question']['stem'].split())
+        question_tokens=[w.lower() for w in i['question']['stem'].split()]
+        if query in question_tokens:
+            results.append(i)
+    return results
+
 option1=st.sidebar.selectbox('Train, val or test ?', ['dev', 'test', 'train'])
+option2=st.sidebar.selectbox('Search Mode ?', ['True'])
 dataset=load_data(option1)
+
+if option2 == 'True':
+    query=st.text_input('Search What? ', value='how')
+    dataset=search_engine(dataset, query)
+
 id=random.randint(0, len(dataset)-1)
 if st.button('Change one'): id=random.randint(0, len(dataset)-1)
 
