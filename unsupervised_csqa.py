@@ -62,3 +62,15 @@ st.header('Top 5')
 st.table(
     pd.DataFrame(output[:5])
 )
+
+st.header('Choices Words')
+choices=[i['text'] for i in dataset[id]['question']['choices']]
+choices=nlp.tokenizer(choices, add_special_tokens=False, return_attention_mask=False)['input_ids']
+results=[]
+for i in choices:
+    for o in output:
+        if o['token'] in i:
+            results.append(o)
+st.table(
+    pd.DataFrame(results)
+)
