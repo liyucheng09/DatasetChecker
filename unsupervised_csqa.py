@@ -9,7 +9,7 @@ st.title('CommonsenseQA Corpus')
 path='/Users/liyucheng/projects/KagNet-master/datasets/csqa_new/'
 
 @st.cache(
-    hash_funcs={"transformers.pipelines.FillMaskPipeline" : lambda _ : None}
+    hash_funcs={"transformers.pipelines.fill_mask.FillMaskPipeline" : lambda _ : None}
 )
 def load_pipeline():
     nlp=pipeline('fill-mask')
