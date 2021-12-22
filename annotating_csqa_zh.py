@@ -13,7 +13,7 @@ type=st.sidebar.selectbox('Train, Dev or Test?', ['dev', 'train', 'test'])
 zh_path=f"/Users/liyucheng/projects/KagNet-master/datasets/csqa_zh/{type}_rand_split_zh.jsonl"
 en_path=f"/Users/liyucheng/projects/KagNet-master/datasets/csqa_new/{type}_rand_split.jsonl"
 edited_path=f"csqa_zh/{type}_edited_zh.jsonl"
-counter_path='.counter'
+counter_path='data/.counter'
 
 col1, col2 = st.beta_columns(2)
 
