@@ -3,7 +3,7 @@ import random
 import json
 
 st.title('CommonsenseQA Corpus')
-path='/Users/liyucheng/projects/KagNet-master/datasets/csqa_new/'
+path='/Users/liyucheng/projects/csqa/csqa_new/'
 
 @st.cache
 def load_data(type):
